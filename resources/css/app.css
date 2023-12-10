@@ -47,6 +47,118 @@ p {
     }
 }
 
+/* Body */
+body {
+    @apply
+    overflow-x-hidden
+    dark:bg-darkbgprimary;
+
+    &.noscroll {
+        @apply
+        overflow-y-hidden;
+    }
+}
+
+/* Navigation */
+#site-navigation {
+    @apply 
+    bg-transparent fixed left-0 py-3 top-0 w-full z-10;
+
+    .container {
+        @apply 
+        flex flex-row flex-wrap gap-8 items-center justify-between max-w-7xl mx-auto px-8;
+
+        #nav-logo {
+            @apply 
+            fill-gray-300;
+        }
+
+        #header-right {
+            @apply 
+            flex flex-row flex-wrap gap-8 items-center justify-end max-w-7xl;
+
+            #nav-links {
+                @apply
+                bg-white duration-500 ease-in flex flex-col fixed gap-4 h-screen overflow-x-hidden -right-[180px] top-0 transition-all w-[180px]
+                dark:bg-slate-600
+                lg:bg-transparent lg:flex-row lg:flex-wrap lg:h-auto lg:static lg:w-auto
+                lg:dark:bg-transparent;
+
+                #nav-close {
+                    @apply
+                    absolute right-[35px] top-[20px]
+                    dark:stroke-gray-500
+                    dark:hover:stroke-gray-300
+                    lg:hidden;
+                }
+
+                .nav-link {
+                    @apply
+                    text-neutral-400
+                    hover:text-neutral-700
+                    dark:text-darktextsecondary
+                    dark:hover:text-darktextprimary
+                    lg:text-gray-400
+                    lg:hover:text-gray-200;
+                }
+
+                &.open {
+                    @apply
+                    right-0 px-8 py-20;
+                }
+            }
+
+            #theme-toggle {
+                #dark {
+                    @apply 
+                    fill-gray-300
+                    hover:fill-white;
+                }
+                #light {
+                    @apply 
+                    fill-gray-300
+                    hover:fill-white;
+                }
+            }
+
+            #nav-toggle {
+                @apply 
+                stroke-gray-300
+                lg:hidden;
+            }
+        }
+    }
+
+    &.scrolled {
+        @apply
+        bg-white
+        dark:bg-slate-900;
+
+        #nav-logo {
+            @apply 
+            fill-neutral-600
+            dark:fill-gray-300;
+        }
+
+        #header-right {
+            #theme-toggle {
+                #dark {
+                    @apply
+                    fill-neutral-400
+                    hover:fill-neutral-600
+                    dark:fill-gray-300;
+                }
+            }
+
+            #nav-toggle {
+                @apply
+                stroke-neutral-400
+                hover:stroke-neutral-600;
+            }
+        }
+    }
+}
+
 #login-wrapper {
     @apply
     bg-black bg-cover h-screen relative w-screen;
@@ -179,7 +291,8 @@ p {
 
 #hero {
     @apply 
-    bg-blue-500 pb-14 py-32;
+    bg-blue-500 pb-14 py-32
+    dark:bg-slate-800;
 
     .container {
         @apply 
@@ -204,21 +317,26 @@ p {
             form {
                 .search-wrapper {
                     @apply
-                    bg-white flex flex-row flex-wrap items-center justify-between pl-4 pr-2 py-2 rounded-full shadow-sm shadow-transparent
-                    hover:shadow-gray-300;
+                    bg-white flex flex-row flex-wrap items-center justify-between pl-3 pr-1 py-1 rounded-full shadow-sm shadow-transparent
+                    hover:shadow-gray-300
+                    dark:bg-slate-600
+                    md:mx-auto md:w-[500px]
+                    lg:w-full;
 
                     svg {
                         @apply 
                         h-[24px] w-[24px]
-                        md:h-[32px] w-[32px];
+                        md:h-[32px] w-[32px]
+                        dark:fill-gray-300;
                     }
 
                     #search-input {
                         @apply 
                         bg-transparent border-0 w-[180px]
                         focus:ring-0
+                        dark:text-gray-300
                         sm:w-[400px]
-                        md:w-[500px]
+                        md:w-[300px]
                         lg:w-[400px];
                     }
 
