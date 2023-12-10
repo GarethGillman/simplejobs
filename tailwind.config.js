@@ -9,8 +9,25 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    darkMode: 'class',
+
     theme: {
         extend: {
+            colors: {
+                'accentprimary' : '#E3651D',
+                'accentsecondary' : '#F05941',
+                'bgprimary' : '#191919',
+                'bgsecondary' : '#2C3333',
+                'textprimary' : '#212123',
+                'textsecondary' : '#787876',
+
+                'darkaccentprimary' : '#E3651D',
+                'darkaccentsecondary' : '#F05941',
+                'darkbgprimary' : '#191919',
+                'darkbgsecondary' : '#2C3333',
+                'darktextprimary' : '#ECECEC',
+                'darktextsecondary' : '#BCBCBC'
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
